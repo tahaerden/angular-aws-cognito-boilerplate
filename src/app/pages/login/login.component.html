@@ -1,0 +1,50 @@
+<div *ngIf="!confirmationStep" class="row">
+  <div class="col">
+    <form class="max-w-sm m-auto" [formGroup]="loginForm" (ngSubmit)="login()">
+      <h1>Login</h1>
+      <div class="form-field">
+        <label>Email address</label>
+        <input type="email" formControlName="email" />
+        <div class="error">{{ loginForm.controls['email'].errors | customFormError }}</div>
+      </div>
+      <div class="form-field">
+        <label>Password</label>
+        <input type="password" formControlName="password" />
+        <div class="error">{{ loginForm.controls['password'].errors | customFormError }}</div>
+      </div>
+      <div class="buttons">
+        <button type="submit" [disabled]="loginForm.invalid">Login</button>
+        <small>
+          Don't have an account?
+          <a routerLink="/register">Register</a></small
+        >
+        <small>
+          Forgot your password?
+          <a routerLink="" (click)="forgotPassword()">Reset</a></small
+        >
+      </div>
+    </form>
+  </div>
+</div>
+<div *ngIf="confirmationStep" class="row">
+  <div class="col">
+    <form class="max-w-sm m-auto" [formGroup]="confirmationForm" (ngSubmit)="confirmPassword()">
+      <h1>Confirmation</h1>
+      <div class="form-field">
+        <label>Confirmation Code</label>
+        <input type="text" formControlName="code" />
+        <div class="error">{{ confirmationForm.controls['code'].errors | customFormError }}</div>
+      </div>
+      <div class="form-field">
+        <label>Password</label>
+        <input type="password" formControlName="newPassword" />
+        <div class="error">
+          {{ confirmationForm.controls['newPassword'].errors | customFormError }}
+        </div>
+      </div>
+      <div class="buttons">
+        <button type="submit" [disabled]="confirmationForm.invalid">Confirm</button>
+      </div>
+    </form>
+  </div>
+</div>

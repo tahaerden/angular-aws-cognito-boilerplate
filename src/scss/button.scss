@@ -1,0 +1,52 @@
+button,
+.btn {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  user-select: none;
+  font-family: inherit;
+  font-size: 1em;
+  font-weight: bold;
+  outline: none;
+  margin: 0 0.5em 0.5em 0;
+  padding: 0.6em 3em;
+  transition: all ease-out 0.2s;
+  &:hover {
+    box-shadow: 0 0 5em rgba($color: #000000, $alpha: 0.1) inset;
+  }
+  &:active {
+    box-shadow: 0 0 5em rgba($color: #000000, $alpha: 0.2) inset;
+  }
+  &.stroked {
+    border: 1px solid #f0f0f0;
+  }
+  &.rounded {
+    border-radius: 1em;
+  }
+  &[disabled] {
+    opacity: 0.5;
+  }
+  &[type='submit'] {
+    @extend .bg-primary;
+    @extend .rounded;
+  }
+  &[type='button']:has(+ [type='submit']) {
+    @extend .stroked;
+    @extend .rounded;
+  }
+}
+// Dropdown Menu
+[cdkMenu] {
+  display: inline-flex;
+  flex-direction: column;
+  min-width: 180px;
+  max-width: 280px;
+  background-color: white;
+  box-shadow: 0 5px 5px -3px #0003, 0 8px 10px 1px #00000024, 0 3px 14px 2px #0000001f;
+  button {
+    line-height: 3em;
+    padding: 0 1em;
+    margin: 0;
+    text-align: left;
+  }
+}

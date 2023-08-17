@@ -1,0 +1,21 @@
+* {
+  color: $body;
+  line-height: 1em;
+  font-family: 'Mulish', sans-serif;
+  font-weight: 500;
+}
+small {
+  font-size: 0.8em;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  margin-bottom: 2em;
+}
+.text-center {
+  text-align: center;
+}

@@ -1,0 +1,49 @@
+<div *ngIf="!confirmationStep" class="row">
+  <div class="col">
+    <form class="max-w-sm m-auto" [formGroup]="registerForm" (ngSubmit)="signUp()">
+      <h1>Register</h1>
+      <div class="form-field">
+        <label>Email</label>
+        <input type="email" formControlName="email" />
+        <div class="error">{{ registerForm.controls['email'].errors | customFormError }}</div>
+      </div>
+      <div class="form-field">
+        <label>First Name</label>
+        <input type="text" formControlName="firstName" />
+        <div class="error">{{ registerForm.controls['firstName'].errors | customFormError }}</div>
+      </div>
+      <div class="form-field">
+        <label>Last Name</label>
+        <input type="text" formControlName="lastName" />
+        <div class="error">{{ registerForm.controls['lastName'].errors | customFormError }}</div>
+      </div>
+      <div class="form-field">
+        <label>Password</label>
+        <input type="password" formControlName="password" />
+        <div class="error">{{ registerForm.controls['password'].errors | customFormError }}</div>
+      </div>
+      <div class="buttons">
+        <button type="submit" [disabled]="registerForm.invalid">Register</button>
+        <small>Already have an account? <a routerLink="/login">Login</a></small>
+      </div>
+    </form>
+  </div>
+</div>
+<div *ngIf="confirmationStep" class="row">
+  <div class="col">
+    <form class="max-w-sm m-auto" [formGroup]="confirmationForm" (ngSubmit)="confirmRegistration()">
+      <h1>Confirmation</h1>
+      <div class="form-field">
+        <label>Confirmation Code</label>
+        <input type="text" formControlName="code" />
+        <div class="error">{{ confirmationForm.controls['code'].errors | customFormError }}</div>
+      </div>
+      <div class="buttons">
+        <button type="button" (click)="resendConfirmationCode()" [disabled]="resendCodeTimer > 0">
+          Re-send code <span *ngIf="resendCodeTimer > 0">({{ resendCodeTimer }})</span>
+        </button>
+        <button type="submit" [disabled]="confirmationForm.invalid">Confirm</button>
+      </div>
+    </form>
+  </div>
+</div>

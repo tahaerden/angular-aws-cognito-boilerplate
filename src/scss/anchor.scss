@@ -1,0 +1,9 @@
+a {
+  @extend .text-accent;
+  font-weight: bold;
+  padding: 0.4em;
+  text-decoration: none;
+  &:hover {
+    color: $body !important;
+  }
+}

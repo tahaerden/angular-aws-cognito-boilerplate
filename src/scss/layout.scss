@@ -1,0 +1,18 @@
+* {
+  box-sizing: border-box;
+}
+.row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($xs, 1fr));
+  grid-gap: 1rem;
+  // align-items: center;
+}
+.col {
+  padding: 1rem;
+}
+.max-w-sm {
+  max-width: $sm;
+}
+.m-auto {
+  margin: auto;
+}

@@ -1,0 +1,41 @@
+form {
+  h1 {
+    text-align: center;
+  }
+  .form-field {
+    margin-bottom: 1em;
+    label {
+      display: block;
+      color: $label;
+      font-size: 0.9em;
+    }
+    input {
+      display: block;
+      padding: 1em 0 0.5em 0;
+      width: 100%;
+      border: 0;
+      outline: none;
+      border-bottom: 1px solid lightgray;
+      font-size: 1em;
+    }
+    input.ng-untouched + .error {
+      visibility: hidden;
+    }
+    .error {
+      font-size: 0.8em;
+      color: $danger;
+      margin-top: 0.5em;
+    }
+  }
+  .buttons {
+    text-align: center;
+    margin-top: 4em;
+    small {
+      display: block;
+      margin-bottom: 0.5em;
+      &:first-of-type {
+        margin-top: 1em;
+      }
+    }
+  }
+}
