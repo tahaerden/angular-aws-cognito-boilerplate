@@ -1,6 +1,11 @@
 * {
   box-sizing: border-box;
 }
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
 .row {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax($xs, 1fr));
