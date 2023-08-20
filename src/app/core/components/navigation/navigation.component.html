@@ -1,10 +1,29 @@
 <div class="navbar">
   <h1>Logo</h1>
-  <ul class="nav">
+  <ul class="nav hidden-smaller-lg">
     <li><a routerLink="/home">Home</a></li>
     <li>
       <button [cdkMenuTriggerFor]="menu">Profile</button>
       <ng-template #menu>
+        <div cdkMenu>
+          <button cdkMenuItem routerLink="/profile">Profile</button>
+          <button cdkMenuItem routerLink="/logout">Logout</button>
+        </div>
+      </ng-template>
+    </li>
+  </ul>
+  <ul class="nav hidden-bigger-lg">
+    <li>
+      <button [cdkMenuTriggerFor]="menu1">---</button>
+      <ng-template #menu1>
+        <div cdkMenu>
+          <button cdkMenuItem routerLink="/home">home</button>
+        </div>
+      </ng-template>
+    </li>
+    <li>
+      <button [cdkMenuTriggerFor]="menu2">Profile</button>
+      <ng-template #menu2>
         <div cdkMenu>
           <button cdkMenuItem routerLink="/profile">Profile</button>
           <button cdkMenuItem routerLink="/logout">Logout</button>

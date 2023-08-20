@@ -1,3 +1,4 @@
+// RESET
 * {
   box-sizing: border-box;
 }
@@ -6,6 +7,7 @@ body {
   margin: 0;
   padding: 0;
 }
+// RESPONSIVENESS
 .row {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax($xs, 1fr));
@@ -15,9 +17,20 @@ body {
 .col {
   padding: 1rem;
 }
+// HELPERS
 .max-w-sm {
   max-width: $sm;
 }
 .m-auto {
   margin: auto;
+}
+@media (max-width: ($lg - 1)) {
+  .hidden-smaller-lg {
+    display: none !important;
+  }
+}
+@media (min-width: $lg) {
+  .hidden-bigger-lg {
+    display: none !important;
+  }
 }
