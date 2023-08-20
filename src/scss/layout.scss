@@ -9,13 +9,20 @@ body {
 }
 // RESPONSIVENESS
 .row {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax($xs, 1fr));
-  grid-gap: 1rem;
-  // align-items: center;
+  display: flex;
+  gap: 1em;
+  // .col {
+  //   width: 100%;
+  // }
 }
-.col {
+.row > * {
+  flex-basis: 100%;
   padding: 1rem;
+}
+@media (max-width: ($lg - 1)) {
+  .row {
+    flex-direction: column;
+  }
 }
 // HELPERS
 .max-w-sm {
